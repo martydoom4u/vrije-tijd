@@ -1,0 +1,42 @@
+{% load staticfiles %}
+{% include 'base.html' %}
+  {% block content %}
+  <h1 class="text-center">Goedendag {{ request.user }}, welkom bij je profiel.</h1>
+  <div class="row">
+    <div class="col-lg-4"></div>
+      <div class="card col-lg-4" style="width: 20rem;">
+        <div class="card-body">
+          <h3 class="card-title">Gegevens</h3>
+          <p class="card-text"></p>
+          <div class="form-group">
+            <label for="username">Username: </label>
+            <input class="float-right" type="text" name="Username" value="{{ request.user }}">
+          </div>
+          <div class="form-group">
+            <label for="username">Voornaam: </label>
+            <input class="float-right" type="text" name="Voornaam" value="Voornaam">
+          </div>
+          <div class="form-group">
+            <label for="email">Achternaam: </label>
+            <input class="float-right" type="text" name="Achternaam" value="achternaam">
+          </div>
+          <div class="form-group">
+            <label for="email">Email: </label>
+            <input class="float-right" type="text" name="email" value="Email@mail.com">
+          </div>
+          <div class="form-group">
+            <label for="Adres">Adres: </label>
+            <input class="float-right" type="text" name="Adres" value="Adres">
+          </div>
+
+
+
+
+          <a href="#" class="btn btn-primary">Update</a>
+        </div>
+      </div>
+      <div class="col-lg-4"></div>
+  </div>
+
+
+  {% endblock content %}

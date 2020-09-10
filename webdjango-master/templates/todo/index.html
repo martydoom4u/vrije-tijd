@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% include "_modal.html" %}
+
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col">
+
+        <div class="row">
+          <div class="col-12 mb-3">
+            <button class="create-Contract btn btn-primary" type="button" name="button">
+              <span class="fa fa-plus mr-2"></span>Create todo</button>
+          </div>
+          <div class="col-12 mb-3">
+            {% if Contracts %}
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="text-center" scope="col">#</th>
+                    <th class="text-center" scope="col">organisatie</th>
+                    <th class="text-center" scope="col">status</th>
+                    <th class="text-center" scope="col"> begindatum</th>
+                    <th class="text-center" scope="col">einddatum</th>
+
+                    <th class="text-center" scope="col">lezen / Updaten / verwijderen</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for Contract in Contracts %}
+                    <tr>
+                      <th class="text-center" scope="row">{{ Contract.id }}</th>
+                      <td class="text-center">{{ Contract.organisatie }}</td>
+                      <td class="text-center">{{ Contract.status }}</td>
+                      <td class="text-center">{{ Contract.begindatum }}</td>
+                      <td class="text-center">{{ Contract.einddatum }}</td>
+
+                      <td class="text-center">
+                        <button type="button" class="read-Contract btn btn-sm btn-primary" data-id="{% url 'read_Contract' Contract.id %}">
+                          <span class="fa fa-eye"></span>
+                        </button>
+                        <button type="button" class="update-Contract btn btn-sm btn-primary" data-id="{% url 'update_Contract' Contract.id %}">
+                          <span class="fa fa-pencil"></span>
+                        </button>
+                        <button type="button" class="delete-Contract btn btn-sm btn-danger" data-id="{% url 'delete_Contract' Contract.id %}">
+                          <span class="fa fa-trash"></span>
+                        </button>
+
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            {% else %}
+              <p class="text-primary">uw heeft nog geen contracten</p>
+            {% endif %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+{% block extrascripts %}
+  <script type="text/javascript">
+    $(function () {
+
+      // Create book button
+      $(".create-Contract").modalForm({formURL: "{% url 'create_todo' %}"});
+
+      // Update book buttons
+      $(".update-Contract").each(function () {
+        $(this).modalForm({formURL: $(this).data('id')});
+      });
+
+      // Read book buttons
+      $(".read-Contract").each(function () {
+        $(this).modalForm({formURL: $(this).data('id')});
+      });
+
+      // Delete book buttons
+      $(".delete-Contract").each(function () {
+        $(this).modalForm({formURL: $(this).data('id')});
+      });
+
+    });
+  </script>
+{% endblock extrascripts %}

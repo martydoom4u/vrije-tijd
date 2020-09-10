@@ -1,0 +1,31 @@
+{% load widget_tweaks %}
+
+<div class="modal-header">
+  <h3 class="modal-title">Weekstaat details</h3>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+
+  <div class="">
+    organisatie:
+    {{ Contract.organisatie }}
+  </div>
+  <div class="">
+    tussenpersoon:
+    {{ Contract.tussenpersoon }}
+  </div>
+  <div class="">
+    tussenpersoon_email:
+    {{ Contract.tussenpersoon_email }}</td>
+
+
+  </div>
+
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>

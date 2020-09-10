@@ -1,0 +1,78 @@
+{% load staticfiles %}
+{% include 'base.html' %}
+   {% block content %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<title>Home - UurtjeFactuurtje</title>
+
+<body>
+
+<div class="container text-center">
+    <br>
+    <h3 id="welkomstbericht">Welkom op Uurtjefactuurtje</h3>
+    <p>
+        <br>Met Uurtjefactuurtje wordt het proces van urenregistratie versimpeld.<br>
+        Alles is geautomatiseerd zodat u geen moeite meer hoeft te doen om uw salaris op te vragen.
+    </p>
+</div>
+
+<div class="container">
+    <main class="text-center eersteElement">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active slideshow ">
+                    <img style="width:50%;height:50%;"
+                         src="{% static 'images/afbeelding-oplossing-min.jpg' %}" alt="hoi"
+                         alt="Euromunten">
+                    <div class="carousel-caption">
+                        <h3>Uurtjefactuurtje</h3>
+                        <p>De oplossing voor urenregistratie.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style="width:50%;height:50%;"
+                         src="{% static 'images/afbeelding-euromunten-min.jpg' %}"
+                         alt="Oplossing">
+                    <div class="carousel-caption">
+                        <h3>Niemand kan er teveel van hebben</h3>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style="width:50%;height:50%;"
+                         src="{% static 'images/afbeelding-laptop-min.jpg' %}"
+                         alt="Laptop">
+                    <div class="carousel-caption">
+                        <h3>Handig en efficiënt</h3>
+                        <p>Geen gedoe.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+{% endblock content %}
+
+
+
+</div>
+ {% block extrascripts %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+{% endblock extrascripts %}

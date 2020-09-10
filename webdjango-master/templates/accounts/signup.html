@@ -1,0 +1,14 @@
+
+{% load bootstrap4 %}
+{% load staticfiles %}
+{% include 'base.html' %}
+   {% block content %}
+<div class="container">
+    <h1>registreren van account</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn btn-success" value="opgeven">
+    </form>
+</div>
+{% endblock content %}

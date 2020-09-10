@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% include "_modal.html" %}
+
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <div class="col-12 mb-3">
+            <button class="create-Weekstaat btn btn-primary" type="button" name="button">
+              <span class="fa fa-plus mr-2"></span>Create Factuur</button>
+          </div>
+
+
+
+{% block extrascripts %}
+  <script type="text/javascript">
+    $(function () {
+
+      // Create book button
+      $(".create-Weekstaat").modalForm({formURL: "{% url 'create_Weekstaat' %}"});
+    });
+  </script>
+{% endblock extrascripts %}

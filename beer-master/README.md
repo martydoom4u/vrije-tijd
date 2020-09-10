@@ -1,0 +1,1 @@
+deze web applicatie is er voor bedoeld om via een api bier uit rest te halen en deze te kunnen beoordelen 
