@@ -1,26 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component }  from "react";
+import Button from './component/button';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component{
+  constructor(props){
+    super (props);
+
+
+    this.state = {
+      Current: '0',
+      vorigen: []
+    }
+  }
+
+
+  reset = () => {
+    this.setState({reset: 0});
+
+  
+  }
+render() {
+  const buttons = [
+    {symbol: 'c', cols:3, action: this.reset},
+    {symbol: '/', cols:1, action: this.addToCurrent},
+    {symbol: '7', cols:1, action: this.addToCurrent},
+    {symbol: '8', cols:1, action: this.addToCurrent},
+    {symbol: '9', cols:1, action: this.addToCurrent},
+    {symbol: 'x', cols:1, action: this.addToCurrent},
+    {symbol: '4', cols:1, action: this.addToCurrent},
+    {symbol: '5', cols:1, action: this.addToCurrent},
+    {symbol: '6', cols:1, action: this.addToCurrent},
+    {symbol: '-', cols:1, action: this.addToCurrent},
+    {symbol: '3', cols:1, action: this.addToCurrent},
+    {symbol: '2', cols:1, action: this.addToCurrent},
+    {symbol: '1', cols:1, action: this.addToCurrent},
+    {symbol: '+', cols:1, action: this.addToCurrent},
+    {symbol: '0', cols:2, action: this.addToCurrent},
+    {symbol: '.', cols:1, action: this.addToCurrent},
+    {symbol: '=', cols:1, action: this.addToCurrent},
+
+
+
+
+  ];
+    return(
+      <div  classname="App">
+        <input className = 'resultaat' type="text" Value={this.state.Current} />
+        {buttons.map((btn, i) => {
+          return <Button key={i} symbol={btn.symbol} cols={btn.cols}  action={(symbol) => btn.action(symbol)} />
+        })}
+
+
+
+      </div>
+    );
+  }
+
 }
-
 export default App;
