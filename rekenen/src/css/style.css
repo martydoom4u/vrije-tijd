@@ -1,0 +1,24 @@
+.column-3{
+    width: 75%;
+    float: left;
+}
+.column-2{
+    width: 50%;
+    float: left;
+    
+}
+.column-1{
+    width: 25%;
+    float: left;
+}
+button.reken-button{
+    width: 100%;
+    height: 100%;
+    border: 2px solid#eee;
+    font-size: 32px;
+    color: #555;
+    position: relative;
+    max-width: 100vw;
+    margin-right: 50px;
+    float: right;
+}
