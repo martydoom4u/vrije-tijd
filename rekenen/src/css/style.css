@@ -14,11 +14,31 @@
 button.reken-button{
     width: 100%;
     height: 100%;
-    border: 2px solid#eee;
+    border: 2px solid#e8e4e4;
     font-size: 32px;
     color: #555;
     position: relative;
     max-width: 100vw;
+    float: right;
+    border-radius: 5px;
+}
+.resultaat{
+    height: 100px;
+    width: auto;
+    border: none;
+    text-align: right;
+    font-size: 32px;
+    position: relative;
+    max-width: 100vw;
     margin-right: 50px;
     float: right;
+
+
+}
+.floaty-last{
+    float: right;
+    right: 50px;
+    z-index: 99px;
+    top: 10px;
+    color: #aaa;
 }
